@@ -58,7 +58,7 @@ const CategoryGrid: React.FC = () => (
           className="relative rounde p-5 bg-cover bg-center rounded-3xl overflow-hidden text-white font-bold flex flex-col items-center justify-center transition-transform transform hover:scale-105 group"
           style={{ backgroundImage: `url(${cat.image})` }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-70 group-hover:bg-red-600 group-hover:bg-opacity-70 transition-colors"> </div>
+          <div className="absolute inset-0 bg-gray-800 group-hover:bg-red-600 group-hover:bg-opacity-80 transition-colors"> </div>
           <cat.icon className="relative z-10 text-4xl mb-2" />
           <span className="relative z-10 text-xl text-center">{cat.title}</span>
         </a>

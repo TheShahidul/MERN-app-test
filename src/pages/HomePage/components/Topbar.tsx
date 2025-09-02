@@ -8,11 +8,11 @@ const Topbar: React.FC = () => {
         <div className="flex items-center space-x-4">
           <a href="tel:+1234567890" className="flex items-center hover:text-gray-300">
             <FaPhone className="mr-1" />
-            <span>+1 (234) 567-890</span>
+            <span>+8801886755066</span>
           </a>
           <a href="mailto:info@example.com" className="flex items-center hover:text-gray-300">
             <FaEnvelope className="mr-1" />
-            <span>info@example.com</span>
+            <span>shahidul@bpbazar.com</span>
           </a>
           <a href="/track-order" className="hover:text-gray-300">
             Track Your Order

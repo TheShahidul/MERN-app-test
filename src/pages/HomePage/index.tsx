@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import NavBar from './components/NavBar';
-import BannerCarousel from './components/BannerCarousel';
+import HeroSlider from './components/HeroSlider';
 import CategoryGrid from './components/CategoryGrid';
 import TrendingSection from './components/TrendingSection';
 import OfferCarousel from './components/OfferCarousel';
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
       <Topbar/>
       <NavBar isAuthenticated={isAuthenticated} />
       <main className="pt-16 container mx-auto px-4">
-        <BannerCarousel />
+        <HeroSlider />
         <CategoryGrid />
         <TrendingSection />
         <OfferCarousel />
