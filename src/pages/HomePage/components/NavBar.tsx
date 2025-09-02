@@ -21,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm fixed top-0 left-0 right-0 z-40 border-b-2 border-red-600">
+    <nav className="bg-white shadow-sm sticky top-0 z-40 border-b-2 border-red-600">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           
