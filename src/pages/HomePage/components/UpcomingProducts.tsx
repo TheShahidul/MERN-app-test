@@ -75,6 +75,8 @@ const UpcomingProducts: React.FC = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false, // Disable default arrows
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
