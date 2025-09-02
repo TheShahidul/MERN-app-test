@@ -31,8 +31,8 @@ const NavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
               <FaBars className="w-6 h-6" />
             </button>
             <a href="/" className="text-2xl font-bold text-gray-800 hover:text-red-600 transition-colors duration-300 flex items-center space-x-2">
-              <img src={ShopLogo} alt="Shop Logo" className=" w-4 h-4 border-solid" />
-              <span>Bazar</span>
+              <img src={ShopLogo} alt="Shop Logo" className=" w-12 h-8 border-solid" />
+              <span className='text-4xl'>Bazar</span>
             </a>
           </div>
 
@@ -52,15 +52,18 @@ const NavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
 
           {/* 3. Right: Icons - Cart, Wishlist, Login/Register */}
           <div className="flex items-center space-x-6">
-            <a href="/cart" className="text-gray-600 hover:text-red-600">
+            <a href="/cart" className="flex items-center text-gray-600 hover:text-red-600 space-x-1">
               <FaShoppingCart className="w-6 h-6" />
+              <span className="text-sm">Cart</span>
             </a>
-            <a href="/wishlist" className="text-gray-600 hover:text-red-600">
+            <a href="/wishlist" className="flex items-center text-gray-600 hover:text-red-600 space-x-1">
               <FaHeart className="w-6 h-6" />
+              <span className="text-sm">Wishlist</span>
             </a>
             <div className="relative">
-              <button onClick={() => setLoginOpen(!isLoginOpen)} className="text-gray-600 hover:text-red-600">
+              <button onClick={() => setLoginOpen(!isLoginOpen)} className="flex items-center text-gray-600 hover:text-red-600 space-x-1">
                 <FaUser className="w-6 h-6" />
+                <span className="text-sm">Login/Register</span>
               </button>
               {isLoginOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20">
