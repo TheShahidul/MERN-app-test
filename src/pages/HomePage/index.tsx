@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
     <div className="bg-white ">
       
       <NavBar isAuthenticated={isAuthenticated} />
-      <main className="pt-16 container mx-auto  border border-black">
+      <main className="pt-16 container mx-auto px-4">
         <BannerCarousel />
         <CategoryGrid />
         <TrendingSection />

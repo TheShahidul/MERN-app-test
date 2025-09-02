@@ -116,7 +116,9 @@ const SpecialEidOffers: React.FC = () => {
 
   return (
     <section className="p-4 md:p-8 bg-gray-50">
-      <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Special Eid Offers</h2>
+      <div className="text-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-800 border border-red-600 rounded-full px-4 py-2 inline-block">Special Eid Offers</h2>
+      </div>
       <div className="relative max-w-6xl mx-auto">
         <Slider ref={sliderRef} {...settings}>
           {products.map((product) => (
