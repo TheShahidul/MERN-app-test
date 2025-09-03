@@ -72,7 +72,7 @@ const SignupPage: React.FC = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      await signupUser({ username, password, shops: shops.filter(s => s.trim() !== '') });
+      await signupUser({ email: username, password, shops: shops.filter(s => s.trim() !== '') });
       setMessage({ type: 'success', text: 'Signup successful! Redirecting to login...' });
       setTimeout(() => navigate('/signin'), 2000);
     } catch (error: unknown) {

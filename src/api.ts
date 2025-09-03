@@ -3,6 +3,7 @@ interface SignupUserData {
   username?: string;
   email: string;
   password: string;
+  shops?: string[];
 }
 
 interface LoginCredentials {

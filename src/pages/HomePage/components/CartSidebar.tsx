@@ -46,7 +46,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose }) => {
                 <div>
                   <h3 className="font-semibold text-gray-800">{item.name}</h3>
                   <p className="text-gray-600 text-sm">Quantity: {item.quantity}</p>
-                  <p className="text-gray-800 font-bold">${(item.price ?? 0) * item.quantity}</p>
+                  <p className="text-gray-800 font-bold">BDT {(item.price ?? 0) * item.quantity}</p>
                 </div>
               </div>
               <button onClick={() => handleRemoveFromCart(item.id)} className="text-red-500 hover:text-red-700">
@@ -59,7 +59,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose }) => {
       <div className="absolute bottom-0 left-0 w-full p-4 border-t bg-white">
         <div className="flex justify-between items-center mb-4">
           <span className="text-lg font-semibold">Total:</span>
-          <span className="text-lg font-bold">${getCartTotal().toFixed(2)}</span>
+          <span className="text-lg font-bold">BDT {getCartTotal().toFixed(2)}</span>
         </div>
         <button
           onClick={handleClearCart}

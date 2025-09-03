@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className="text-lg font-semibold truncate text-gray-800">{product.name}</h3>
         <div className="flex items-center justify-between mt-4">
           {product.price !== undefined && (
-            <span className="font-bold text-xl text-gray-800">${product.price.toFixed(2)}</span>
+            <span className="font-bold text-xl text-gray-800">BDT {product.price.toFixed(2)}</span>
           )}
           {product.offer && (
             <span className="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
