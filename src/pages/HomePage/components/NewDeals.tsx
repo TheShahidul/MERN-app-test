@@ -2,8 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import CustomArrow from './CustomArrow';
+import ProductCard from '../../../components/ProductCard'; // Import ProductCard
 
 import pic1 from '../../../assets/products/pic (1).jpg';
 import pic2 from '../../../assets/products/pic (2).jpg';
@@ -14,6 +14,7 @@ import pic6 from '../../../assets/products/pic (6).jpg';
 import pic7 from '../../../assets/products/pic (7).jpg';
 import pic8 from '../../../assets/products/pic (8).jpg';
 
+// Re-using the Product interface from CartContext or ProductCard
 interface Product {
   id: number;
   name: string;
@@ -79,8 +80,6 @@ const products: Product[] = [
   },
 ];
 
-
-
 const NewDeals: React.FC = () => {
   const sliderRef = React.useRef<Slider>(null);
 
@@ -116,7 +115,7 @@ const NewDeals: React.FC = () => {
   };
 
   return (
-    <section className="p-4 md:p-8 bg-gray-50">
+    <section className="p-4 md:p-8 ">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800 border border-red-600 rounded-full px-4 py-2 inline-block">New Deals</h2>
       </div>
@@ -124,23 +123,7 @@ const NewDeals: React.FC = () => {
         <Slider ref={sliderRef} {...settings}>
           {products.map((product) => (
             <div key={product.id} className="px-2">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden relative group">
-                <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold truncate text-gray-800">{product.name}</h3>
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="font-bold text-xl text-gray-800">${product.price}</span>
-                    <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50">
-                      Add to Cart
-                    </button>
-                  </div>
-                  {product.offer && (
-                    <span className="absolute top-0 left-0 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-br-lg">
-                      {product.offer}
-                    </span>
-                  )}
-                </div>
-              </div>
+              <ProductCard product={product} />
             </div>
           ))}
         </Slider>

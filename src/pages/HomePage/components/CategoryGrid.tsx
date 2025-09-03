@@ -49,7 +49,7 @@ const categories: Category[] = [
 ];
 
 const CategoryGrid: React.FC = () => (
-  <section className=" md:p-8 bg-gray-50">
+  <section className=" md:p-8 ">
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
       {categories.map((cat) => (
         <a

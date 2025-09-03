@@ -17,10 +17,10 @@ const SigninPage: React.FC = () => {
     setLoading(true);
     setMessage('');
     try {
-      await loginUser({ username, password, rememberMe });
+      await loginUser({ email: username, password });
       navigate('/dashboard');
-    } catch (error: any) {
-      setMessage(error.message || 'An unexpected error occurred.');
+    } catch (error: unknown) {
+      setMessage((error as Error).message || 'An unexpected error occurred.');
     } finally {
       setLoading(false);
     }

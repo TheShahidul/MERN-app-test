@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import NavBar from './components/NavBar';
 import HeroSlider from './components/HeroSlider';
@@ -12,13 +12,16 @@ import SpecialEidOffers from './components/SpecialEidOffers';
 import UpcomingProducts from './components/UpcomingProducts';
 import Topbar from './components/Topbar';
 
-const HomePage: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+interface HomePageProps {
+  setIsCartOpen: (isOpen: boolean) => void;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ setIsCartOpen }) => {
 
   return (
     <div className="bg-white ">
       <Topbar/>
-      <NavBar isAuthenticated={isAuthenticated} />
+      <NavBar setIsCartOpen={setIsCartOpen} />
       <main className="pt-16 container mx-auto px-4">
         <HeroSlider />
         <CategoryGrid />
@@ -34,8 +37,5 @@ const HomePage: React.FC = () => {
     </div>
   );
 };
-
-
-
 
 export default HomePage;

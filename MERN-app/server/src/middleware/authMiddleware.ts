@@ -12,7 +12,7 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
     req.user = decoded as Express.User; // Assigning to custom property
     next();
-  } catch (err) {
+  } catch (_err: unknown) { // eslint-disable-line @typescript-eslint/no-unused-vars
     res.status(401).json({ msg: 'Invalid token' });
   }
 };

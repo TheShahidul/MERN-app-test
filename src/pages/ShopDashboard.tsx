@@ -15,7 +15,7 @@ const ShopDashboard: React.FC = () => {
       try {
         await getProfile();
         setIsAuthorized(true);
-      } catch (error) {
+      } catch (_error) { // eslint-disable-line @typescript-eslint/no-unused-vars
         setIsAuthorized(false);
       } finally {
         setLoading(false);

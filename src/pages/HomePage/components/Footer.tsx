@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitter, FaGooglePlay, FaApple, FaCcVisa, FaCcMastercard, FaCcPaypal, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowCircleUp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaCcVisa, FaCcMastercard, FaCcPaypal, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowCircleUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => (

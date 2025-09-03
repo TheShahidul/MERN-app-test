@@ -19,7 +19,7 @@ const DashboardPage: React.FC = () => {
       try {
         const data = await getProfile();
         setUser(data);
-      } catch (error) {
+      } catch (_error) { // eslint-disable-line @typescript-eslint/no-unused-vars
         navigate('/signin');
       } finally {
         setLoading(false);

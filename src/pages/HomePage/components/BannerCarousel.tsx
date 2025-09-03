@@ -2,7 +2,7 @@ import React from 'react';
 
 const BannerCarousel: React.FC = () => {
   return (
-    <main className="bg-gray-50">
+    <main className="bg-white">
       <div className="container mx-auto  py-16">
         <div className="flex flex-col md:flex-row items-center">
           {/* Left Side: Text Content */}

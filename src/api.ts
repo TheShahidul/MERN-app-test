@@ -1,4 +1,15 @@
 
+interface SignupUserData {
+  username?: string;
+  email: string;
+  password: string;
+}
+
+interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
 const BASE_URL = 'http://localhost:5000/api/auth';
 
 async function request(url: string, options: RequestInit = {}) {
@@ -18,14 +29,14 @@ async function request(url: string, options: RequestInit = {}) {
   return data;
 }
 
-export async function signupUser(userData: any) {
+export async function signupUser(userData: SignupUserData) {
   return request('/signup', {
     method: 'POST',
     body: JSON.stringify(userData),
   });
 }
 
-export async function loginUser(credentials: any) {
+export async function loginUser(credentials: LoginCredentials) {
   return request('/signin', {
     method: 'POST',
     body: JSON.stringify(credentials),

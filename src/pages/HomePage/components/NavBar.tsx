@@ -2,23 +2,17 @@ import React, { useState } from 'react';
 import { FaBars, FaSearch, FaShoppingCart, FaHeart, FaUser } from 'react-icons/fa';
 import Sidebar from './Sidebar';
 import ShopLogo from '../../../assets/shop-logo/Shop-logo.jpg';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../../app/store';
 
 interface NavBarProps {
-  isAuthenticated: boolean;
+  setIsCartOpen: (isOpen: boolean) => void; // Add setIsCartOpen prop
 }
 
-const AuthNavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
-  return (
-    <nav>
-      {/* AuthNavBar content */}
-      {isAuthenticated ? <p>Welcome back!</p> : <p>Please log in.</p>}
-    </nav>
-  );
-};
-
-const NavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
+const NavBar: React.FC<NavBarProps> = ({ setIsCartOpen }) => {
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-40 border-b-2 border-red-600">
@@ -52,10 +46,15 @@ const NavBar: React.FC<NavBarProps> = ({ isAuthenticated }) => {
 
           {/* 3. Right: Icons - Cart, Wishlist, Login/Register */}
           <div className="flex items-center space-x-6">
-            <a href="/cart" className="flex items-center text-gray-600 hover:text-red-600 space-x-1">
+            <button onClick={() => setIsCartOpen(true)} className="relative flex items-center text-gray-600 hover:text-red-600 space-x-1">
               <FaShoppingCart className="w-6 h-6" />
               <span className="text-sm">Cart</span>
-            </a>
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItems.length}
+                </span>
+              )}
+            </button>
             <a href="/wishlist" className="flex items-center text-gray-600 hover:text-red-600 space-x-1">
               <FaHeart className="w-6 h-6" />
               <span className="text-sm">Wishlist</span>

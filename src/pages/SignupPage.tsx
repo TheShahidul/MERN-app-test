@@ -75,8 +75,8 @@ const SignupPage: React.FC = () => {
       await signupUser({ username, password, shops: shops.filter(s => s.trim() !== '') });
       setMessage({ type: 'success', text: 'Signup successful! Redirecting to login...' });
       setTimeout(() => navigate('/signin'), 2000);
-    } catch (error: any) {
-      setMessage({ type: 'error', text: error.message || 'An unexpected error occurred.' });
+    } catch (error: unknown) {
+      setMessage({ type: 'error', text: (error as Error).message || 'An unexpected error occurred.' });
     } finally {
       setLoading(false);
     }
