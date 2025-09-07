@@ -1,4 +1,4 @@
-# MERN E-Commerce Web Application
+# BP Bazar MERN Project
 
 ## Table of Contents
 

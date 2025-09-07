@@ -1,4 +1,4 @@
-# Formal Engineering Documentation & Diagrams
+# BP Bazar MERN Project - Formal Engineering Documentation & Diagrams
 
 ## 1. SDLC Methods Followed
 
